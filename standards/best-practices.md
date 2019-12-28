@@ -53,4 +53,4 @@ References:
 
 ## 2. 尽量使用函数式编程，尽量避免类（class）
 
-尽量避免面向对象的 class 而尽可能采用函数式编程。用 case class 或 case object 来定义数据，用 object 或 compnion object 定义操作。
+尽量避免面向对象的 class 而尽可能采用函数式编程。用 case class 或 case object 来定义数据，用 object 或 companion object 定义操作。

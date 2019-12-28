@@ -1,5 +1,9 @@
 # Learn Scala
 
+## Resoruce List
+
+[scalais.cool](http://www.scalais.cool/) lists some useful Scala learning resoruces.
+
 ## Basic Tips
 
 - [Interpret Code Block and Curly Braces](https://www.geekabyte.io/2018/03/an-alternative-way-to-interpret-usage.html)
