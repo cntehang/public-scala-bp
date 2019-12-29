@@ -1,27 +1,20 @@
-# Style Guide for Scala Code
+# Scala 代码规范
 
-**In general, observe the style of existing code and respect it.**
+尽可能在 IDE 和 sbt [Scalafmt](https://scalameta.org/scalafmt/) 设置代码规范.
 
-Use [Scalafmt](https://scalameta.org/scalafmt/) in both IDE and sbt build.
+## Scalac 选项
 
-## Naming
+拷贝 [Recommended Scalac Flags For 2.13](https://nathankleyn.com/2019/05/13/recommended-scalac-flags-for-2-13/)。
 
-- Use intention-revealing names which don't need explanation.
+## 命名
 
-  - use `index` instead of `i`
+- Scala 源文件名用 PascalCase。比如 `CustomerOrder.scala`。
+- 除非循环只有一句话，不要用 `i`。双重或以上循环禁用简写。Use `index` instead of `i`
+- 常量名用 PascalCase。比如 `OutputFileTmpPath = "/tmp/"` 。
 
-- Constant names should be in upper camel case.
-  - use `HotelId` instead of `HOTEL_ID`
-
-## Formating
-
-- Maximal line length is limited to 80 characters.
+## 大小
 
 - Code blocks should not exceed 30 lines.
-
-## `val` & `var`
-
-- Be explicit, use `var` only when really needed.
 
 ## `class` & `trait`
 
@@ -29,23 +22,22 @@ Use [Scalafmt](https://scalameta.org/scalafmt/) in both IDE and sbt build.
   only `override` for method with default method,
   do not use `override` for abstract method of the trait.
 
-## Prefer `final case class` over `class`
+## 尽量使用 `final case class` 而不是 `class`
 
-## Type Annotation
+## 类型标注
 
-- Explicitly type-annoted public members
+- 类里所有公共值都需要显式标注数据类型。
 
-## Error Representation
+## 不用 Null 和 Exception，使用
 
-- `Option` for potential absence of a value
-- `Either` for potential failing computatoin
-- `Try` to deal with code that throw
+- `Option` 对于值可能为空
+- `Either` 对于自己明白的错误
+- `Try` 打包可能抛出异常的调用返回值
 
-## Tools
+## 工具（待确定）
 
 - scapegoat
 - wartremover
 - scala linter
 - scalastyle
 - scalafix
-- [Recommended Scalac flags](https://tpolecat.github.io/2017/04/25/scalac-flags.html)
