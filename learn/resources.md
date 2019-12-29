@@ -2,7 +2,9 @@
 
 ## Resoruce List
 
-[scalais.cool](http://www.scalais.cool/) lists some useful Scala learning resoruces.
+[scalais.cool](http://www.scalais.cool/) 给出了一些基本的 Scala 资源。
+
+[Awesome Scala](https://github.com/lauris/awesome-scala) 和 [awesome-scala](https://github.com/uhub/awesome-scala).
 
 ## Basic Tips
 
