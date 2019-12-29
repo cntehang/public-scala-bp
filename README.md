@@ -1,8 +1,8 @@
 # Scala Best Practices
 
-This repository collects resources and best practices for Scala project.
+这里是开发 Scala 项目用到的资源、标准和最佳实践。
 
-## Scala News
+## Scala 新闻
 
 [Scala Times](https://scalatimes.com/) is a weely Scala newspaper since 2014.
 
@@ -10,14 +10,18 @@ This repository collects resources and best practices for Scala project.
 
 [ZIO News](https://www.getrevue.co/profile/zio/) is a biweekly newsletter about ZIO and its ecosystem.
 
-## Git Ignore
+## Git Ignore 文件
 
-The suggested git ignore file is [.gitignore](./.gitignore)
+建议的文件是这里根目录的 [.gitignore](./.gitignore)
 
-## Learning Resources
+## 学习资源（待整理）
 
-They are in the [learn](./learn) folder.
+在 [learn](./learn) 目录
 
-## Standars
+## 开发标准
 
-A set of suggested settings and best practices are listed in [standards](./standards) folder.
+开发应该遵守的代码风格、build 配置、软件版本等在 [standards](./standards) 目录.
+
+## Best Practices
+
+各种常用的最佳实践和范式在 [best-practices](./best-practices) 目录。
