@@ -1,8 +1,10 @@
-# Scala Best Practices
+# Scala 最佳实践
 
 这里是开发 Scala 项目用到的资源、标准和最佳实践。
 
 ## Scala 新闻
+
+跟踪这些新闻会知道 Scala 相关的动态和最新资源。
 
 [Scala Times](https://scalatimes.com/) is a weely Scala newspaper since 2014.
 
