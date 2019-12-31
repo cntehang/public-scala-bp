@@ -31,7 +31,7 @@ scalacOptions += s"-P:silencer:sourceRoots=${baseDirectory.value.getCanonicalPat
 
 ## Package Name
 
-包命名通常有包含四层：`公司.产品.模块`。第二层是大的产品名称，第三层为顶层模块。根据需要可以有更多层，但是不建议超过 6 层。比如人力资源报表包名为 `tehang.hr.reports`。Play controllers 定义在 `tehang.hr.reports.controllers`, 公用的模块在 `tehang.hr.utility`。
+包名加入前缀：`公司.项目名称`。都是小写。项目名称可能包含多个单词，也是小写拼接，不加入下划线或其它分隔符。根据需要可以有更多层，但是不建议超过 7 层。比如人力资源报表包名为 `tehang.hrreports`。Play controllers 定义在 `tehang.hrreports.controllers`, 公用的模块在 `tehang.hrreports.utility`。
 
 ## 大小
 
