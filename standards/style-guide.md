@@ -29,9 +29,14 @@ scalacOptions += s"-P:silencer:sourceRoots=${baseDirectory.value.getCanonicalPat
 - 除非循环只有一句话，不要用 `i`。双重或以上循环禁用简写。Use `index` instead of `i`
 - 常量名用 PascalCase。比如 `OutputFileTmpPath = "/tmp/"` 。
 
-## Package Name
+## 目录，包和文件名
 
-包名加入前缀：`公司.项目名称`。都是小写。项目名称可能包含多个单词，也是小写拼接，不加入下划线或其它分隔符。根据需要可以有更多层，但是不建议超过 7 层。比如人力资源报表包名为 `tehang.hrreports`。Play controllers 定义在 `tehang.hrreports.controllers`, 公用的模块在 `tehang.hrreports.utility`。
+目录都用小写，如果有多个单词则用横杠分隔, 称为 Kebab Case 名称法，比如 customer-order 。
+
+Package 包名加入前缀：`公司.项目名称`。都是小写。项目名称可能包含二个单词（不要再多了，通过层级应该明确了），就用小写拼接，不加入下划线或其它分隔符，比如 customerorder。根据需要可以有更多层，但是不建议超过 7 层。比如人力资源报表包名为 `tehang.hrreports`。Play controllers 定义在 `tehang.hrreports.controllers`, 公用的模块在 `tehang.hrreports.utility`。
+
+文件名按照 Scala 标准用 Pascal Case， 即首字母大写，比如 `CustomerOrder.scala`.
+Web 项目用 Play Framework， HTMLT 模版则用 Camel Case，一个单词小写，如果有第二个单词则首字母大写，比如 `customerOrder.scala.html`。最多二个单词，通过目录来区分语义。
 
 ## 大小
 
