@@ -6,8 +6,10 @@
 
 拷贝 [Recommended Scalac Flags For 2.13](https://nathankleyn.com/2019/05/13/recommended-scalac-flags-for-2-13/)。
 
-## 命名
+## 命名规范
 
+- 多数业务名称都会在多处使用，按产品和业务定义名词已经响应的英文名词。英文名词用于程序的各种文件、包、类已经变量命名。
+- DDD（domain driven design）：每个子域有不同的定义，需要分布式维护清晰的定义。可以放入源文件库。
 - Scala 源文件名用 PascalCase。比如 `CustomerOrder.scala`。
 - 除非循环只有一句话，不要用 `i`。双重或以上循环禁用简写。Use `index` instead of `i`
 - 常量名用 PascalCase。比如 `OutputFileTmpPath = "/tmp/"` 。
@@ -18,10 +20,17 @@
 
 ## 大小
 
+- 一行长度不超过 80（Scalafmt 的缺省值，明确定义）：`maxColumn = 80`。
 - 一个函数实现一个目的明确的功能，不要超过 7 个操作，所有操作在同一抽象层 [SLA: Single Leval Abstraction](http://principles-wiki.net/principles:single_level_of_abstraction).
 - 一个函数不要超过 30 行，不算注释，包括空行。超过的拆分。
 - 一个类不要超过 7 个函数。超过的拆分。
 - 一个文件通常只包含一个类及其伙伴对象，不要超过 200 行。
+
+## 引入
+
+- 用具体引入，避免通配符。如果引入过多，说明文件太大，应该拆分。
+- 大类顺序采用： Scala/Java 标准库、框架库、公司和自己定义的类型三大类。
+- 类中应用顺序：引入按字母排序。
 
 ## `class` & `trait`
 
