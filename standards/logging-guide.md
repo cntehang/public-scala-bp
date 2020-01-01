@@ -105,13 +105,13 @@ Debug 级别的日志在跨进程函数出入口进行记录时应成对出现�
 
 ```java
 // "Enter. "作为推荐的函数进入点的日志格式标准，后面可以加上关键参数的信息
-"Enter GetOrder. orderId: 1234, employeeId: 37"
+"Enter GetOrder::orderId: 1234, employeeId:37"
 
 // "Exit"作为推荐的函数退出点的日志格式标准
 "Exit GetOrder"
 
 // 当有返回值时，也可以记录返回的参数描述
-"Exit GetOrderCount. Return value: 42"
+"Exit GetOrderCount. Return value:42"
 ```
 
 ### 5.2 注意事项
@@ -123,16 +123,19 @@ Debug 级别的日志在跨进程函数出入口进行记录时应成对出现�
 - 日志语句中不要调用耗时的方法（在关闭日志以后，日志对性能的影响应该可以忽略不记）
 
 ```java
-1. logger.debug("Enter. request:{}", JsonUtils.toJson(params));
-2. logger.debug("Enter. request:{}", params);
-3. if (logger.isDebugEnabled()) {
+// 关闭日志以后以会有函数调用 toJson 或 toString，会对性能造成影响，避免使用；
+logger.debug("Enter. request:{}", JsonUtils.toJson(params));
+logger.debug("Enter. request:{}", params);
+
+// 建议的方法
+if (logger.isDebugEnabled()) {
     "Enter. request:{}", JsonUtils.toJson(params));
 }
+// 如果用 toString，则建议
+if (logger.isDebugEnabled()) {
+    "Enter. request:{}", params);
+}
 ```
-
-第一种方法在关闭日志以后以会有函数调用 toJson，会对性能造成影响，避免使用；  
-第二种方法在真正记录日志时才会调用 params 的 toString()方法，推荐使用。
-第三种方法在真正记录日志时才会调用 toJson 方法，推荐使用。
 
 ## 6 例外
 
