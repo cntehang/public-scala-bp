@@ -19,3 +19,7 @@
 - Akka 2.6.1 or later
 - Akka Http 10.11 or later
 - Play 2.8.0 or later
+
+## 4 Http Client
+
+- [sttp 2.0 or later](https://sttp.readthedocs.io/en/latest/) with [akka-http backend](https://sttp.readthedocs.io/en/latest/backends/akkahttp.html).
