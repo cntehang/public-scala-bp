@@ -23,3 +23,7 @@
 ## 4 Http Client
 
 - [sttp 2.0 or later](https://sttp.readthedocs.io/en/latest/) with [akka-http backend](https://sttp.readthedocs.io/en/latest/backends/akkahttp.html).
+
+## 5 JSON Support
+
+Use [circe](https://circe.github.io/circe/) for its support for more than 22 data fields.
