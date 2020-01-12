@@ -36,7 +36,7 @@ Web 项目用 Play Framework， HTMLT 模版则用 Camel Case，一个单词小�
 
 ## Coding Format
 
-尽可能在 IDE 和 sbt [Scalafmt](https://scalameta.org/scalafmt/) 设置代码规范. 
+尽可能在 IDE 和 sbt [Scalafmt](https://scalameta.org/scalafmt/) 设置代码规范.
 
 ## Scalac 选项
 
