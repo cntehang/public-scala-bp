@@ -52,8 +52,8 @@ build/
 *.sw[a-p]
 
 
-### System Files ###
-*.DS_Store
+### ignore System Files recursively ###
+**/.DS_Store
 
 # Windows thumbnail cache files
 Thumbs.db
