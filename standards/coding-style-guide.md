@@ -6,7 +6,7 @@ Scala 编程的二大难点在于其语言的灵活性和函数式编程的范�
 
 函数式编程的习惯养成有赖于思维的转换。思维的转换可以通过行为的改变来形成。下面的原则是函数式编程的十项基本原则：
 
-- 不用 Class 来封装数据和操作。数据用 `case class`， 操作用伴生对象或根据操作种类放到不同的 object 里面。
+- 不用 Class 来封装可变数据和操作。数据尽量用 `case class`， 操作用伴生对象或根据操作种类放到不同的 object 里面。有时用到 Functional Object - 用 Class 封装不可变数据和一些方法（最常见的是 `toString`），这种用法是闭包 Closure。
 - 不用 `null`， 用 `Option`， `Either` 或 `Try`。
 - 不用异常 `Throwable`. 用 `Try` 或 `Either` 来封装产生异常的调用。
 - 只用 `val`, 不用 `var`。
