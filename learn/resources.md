@@ -33,14 +33,14 @@
 - [Richard Imaoka -- Akka, Concurrency, etc.](https://richardimaoka.github.io/blog)
 - [Akka HTTP Request and Response models](https://richardimaoka.github.io/blog/akka-http-request-response-model/)
 
-### Youtube Channels
+### Some Topics
 
 - [Scala Days Conferences](https://www.youtube.com/channel/UCOHg8YCiyMVRRxb3mJT_0Mg)
 
-### Martin Odersky
-
 - [What to Leave Implicit - ScalaDay 2017](https://www.youtube.com/watch?v=Oij5V7LQJsA): the first half shows the different way and preferred way to use implicit while the second half is about new.
 - [Plain Functional Programming - 2017](https://www.youtube.com/watch?v=YXDm3WHZT5g): with a reference to [Strategic Scala Style: Principle of Least Power](http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html)
+- This 2019 video of [Ploymorphism in Scala](https://scaladays.org/2019/lausanne/schedule/polymorphism-in-scala) gives a clear introdution to three different polymorphism (ad hoc, parametric, inclusive) and relevant concepts such as type variances, context bound and the design patterns (interface syntax and type enrichment) of type classes.
+- The blog of [Returning the "Current" Type in Scala](https://tpolecat.github.io/2015/04/29/f-bounds.html) explains the related concepts (F-bounded types, self-type, `forSome` keyword).
 
 ## Slick
 
