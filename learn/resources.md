@@ -12,6 +12,15 @@
 - An sbt Tutorial
   - [sbt - A task engine](https://jazzy.id.au/2015/03/03/sbt-task-engine.html)
   - [sbt - A declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html)
+
+## Videos
+
+### Collectioins
+
+- [Scala Days Conferences](https://www.youtube.com/channel/UCOHg8YCiyMVRRxb3mJT_0Mg)
+
+### Specific Topics
+
 - [Essential Scala: Six Core Principles for Learning Scala](https://www.youtube.com/watch?v=J8wUy1XxL5o)
   - It is essential to program like keyboard cat!
   - discuss six fundamental concepts that underly effective Scala; How can programmers quickly and effectively learn to write idiomatic Scala?
@@ -25,6 +34,13 @@
     (to achieve polymorphism without class hierarchy)
     (so called ad-hoc polymorphism)
 - [Options in Futures, how to unsuck them](https://www.youtube.com/watch?v=hGMndafDcc8): about monad transformer
+- [Polymorphism in Scala](https://youtu.be/-SA1Ui283Qc): 解释了三种多态：subtyping polymorphism (OO polymorphism), parametric polymorphism (generic type) and ad hoc polymorphism (overloading methods) 的定义和适用场景。同时介绍了 variance， type bound 和 context
+  bound。简单明了。
+- [What to Leave Implicit - ScalaDay 2017](https://www.youtube.com/watch?v=Oij5V7LQJsA): the first half shows the different way and preferred way to use implicit while the second half is about new.
+- [Don't fear the Implicits: Everything you need to know about typeclasses](https://youtu.be/1e9tcymPl7w): 一个比较清晰全面的关于 Typeclasses 的介绍。
+- [Plain Functional Programming - 2017](https://www.youtube.com/watch?v=YXDm3WHZT5g): with a reference to [Strategic Scala Style: Principle of Least Power](http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html)
+- This 2019 video of [Ploymorphism in Scala](https://scaladays.org/2019/lausanne/schedule/polymorphism-in-scala) gives a clear introdution to three different polymorphism (ad hoc, parametric, inclusive) and relevant concepts such as type variances, context bound and the design patterns (interface syntax and type enrichment) of type classes.
+- The blog of [Returning the "Current" Type in Scala](https://tpolecat.github.io/2015/04/29/f-bounds.html) explains the related concepts (F-bounded types, self-type, `forSome` keyword).
 
 ## Some Resources
 
@@ -33,27 +49,15 @@
 - [Richard Imaoka -- Akka, Concurrency, etc.](https://richardimaoka.github.io/blog)
 - [Akka HTTP Request and Response models](https://richardimaoka.github.io/blog/akka-http-request-response-model/)
 
-### Some Topics
-
-- [Scala Days Conferences](https://www.youtube.com/channel/UCOHg8YCiyMVRRxb3mJT_0Mg)
-
-- [What to Leave Implicit - ScalaDay 2017](https://www.youtube.com/watch?v=Oij5V7LQJsA): the first half shows the different way and preferred way to use implicit while the second half is about new.
-- [Plain Functional Programming - 2017](https://www.youtube.com/watch?v=YXDm3WHZT5g): with a reference to [Strategic Scala Style: Principle of Least Power](http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html)
-- This 2019 video of [Ploymorphism in Scala](https://scaladays.org/2019/lausanne/schedule/polymorphism-in-scala) gives a clear introdution to three different polymorphism (ad hoc, parametric, inclusive) and relevant concepts such as type variances, context bound and the design patterns (interface syntax and type enrichment) of type classes.
-- The blog of [Returning the "Current" Type in Scala](https://tpolecat.github.io/2015/04/29/f-bounds.html) explains the related concepts (F-bounded types, self-type, `forSome` keyword).
-
 ## Slick
 
 - [Slick](https://github.com/slick/slick)
-
 - [Polymorphic record types in a lifted embedding - by Stefan Zeiger](https://www.youtube.com/watch?v=tS6N5AaZTLA)
-
   - Scala Days New York, 2016
   - an overview of the "lifted embedding" at the core of the Scala DSL in Slick.
   - "lifted embedding" is a tech to enable type check of target language in scala's type system
     - "embedding" means designing AST and writing interpreter in scala
     - "lifted" means `T` to `F[T]`
-
 - [Reactive Database Mapping with Scala and Slick - Jacek Kunicki](https://www.youtube.com/watch?v=Ksobupg60Vk)
   - example usage of slick
 
@@ -72,18 +76,13 @@
   - Do not use akka remoting, use akka cluster.
   - Do not use java serialization, use protobuf or Avro.
 
-- [Islands in the Stream Integrating Akka Streams and Akka Actors](https://www.youtube.com/watch?v=qaiwalDyayA)
-
+- Akka Streams
+  - [Islands in the Stream Integrating Akka Streams and Akka Actors](https://www.youtube.com/watch?v=qaiwalDyayA)
   - [Blog](https://blog.colinbreck.com/integrating-akka-streams-and-akka-actors-part-iv/)
-  - [Code example](https://github.com/pbernet/akka_streams_tutorial)
-
-- [Patterns for Streaming Telemetry with Akka Streams by Colin Breck](https://www.youtube.com/watch?v=ilhImUjF53A)
-
-- [Colin Breck | From Time Series Database to Key Operational Technology for the Enterprise](https://www.youtube.com/watch?v=3APiIht6oDY)
-
-### backpressure
-
-- [Backpressure explained — the resisted flow of data through software, by Jay Phelps](https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7)
+  - [Code example](https://github.com/pbernet/akka_streams_tutorial
+  - [Patterns for Streaming Telemetry with Akka Streams by Colin Breck](https://www.youtube.com/watch?v=ilhImUjF53A)
+  - [Colin Breck | From Time Series Database to Key Operational Technology for the Enterprise](https://www.youtube.com/watch?v=3APiIht6oDY)
+  - [Backpressure explained — the resisted flow of data through software, by Jay Phelps](https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7)
 
 ## Logging
 
