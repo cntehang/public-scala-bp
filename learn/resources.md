@@ -79,7 +79,6 @@
 - Akka Streams
   - [Islands in the Stream Integrating Akka Streams and Akka Actors](https://www.youtube.com/watch?v=qaiwalDyayA)
   - [Blog](https://blog.colinbreck.com/integrating-akka-streams-and-akka-actors-part-iv/)
-  - [Code example](https://github.com/pbernet/akka_streams_tutorial
   - [Patterns for Streaming Telemetry with Akka Streams by Colin Breck](https://www.youtube.com/watch?v=ilhImUjF53A)
   - [Colin Breck | From Time Series Database to Key Operational Technology for the Enterprise](https://www.youtube.com/watch?v=3APiIht6oDY)
   - [Backpressure explained — the resisted flow of data through software, by Jay Phelps](https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7)
