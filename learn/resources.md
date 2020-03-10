@@ -33,14 +33,13 @@
   - Use type class, when you need common behavior, but do not have (useful) common type.
     (to achieve polymorphism without class hierarchy)
     (so called ad-hoc polymorphism)
-- [Options in Futures, how to unsuck them](https://www.youtube.com/watch?v=hGMndafDcc8): about monad transformer
-- [Polymorphism in Scala](https://youtu.be/-SA1Ui283Qc): 解释了三种多态：subtyping polymorphism (OO polymorphism), parametric polymorphism (generic type) and ad hoc polymorphism (overloading methods) 的定义和适用场景。同时介绍了 variance， type bound 和 context
-  bound。简单明了。
-- [What to Leave Implicit - ScalaDay 2017](https://www.youtube.com/watch?v=Oij5V7LQJsA): the first half shows the different way and preferred way to use implicit while the second half is about new.
+- [High Wizardry in the land of Scala](https://vimeo.com/28793245) introduces the concepts of higher-kinds, typeclasses, type-level encoding and 在 Scala 里面没有多大用处的 continuations. 解释的非常清晰明了，解释了 `HList` 的实现及后面的理论基础。
+- [Polymorphism in Scala](https://youtu.be/-SA1Ui283Qc): 解释了三种多态：subtyping polymorphism (OO polymorphism), parametric polymorphism (generic type) and ad hoc polymorphism (overloading methods) 的定义和适用场景。同时介绍了 variance， type bound 和 context bound。简单明了。
+- [What to Leave Implicit - ScalaDay 2017](https://www.youtube.com/watch?v=Oij5V7LQJsA):
 - [Don't fear the Implicits: Everything you need to know about typeclasses](https://youtu.be/1e9tcymPl7w): 一个比较清晰全面的关于 Typeclasses 的介绍。
 - [Plain Functional Programming - 2017](https://www.youtube.com/watch?v=YXDm3WHZT5g): with a reference to [Strategic Scala Style: Principle of Least Power](http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html)
 - The blog of [Returning the "Current" Type in Scala](https://tpolecat.github.io/2015/04/29/f-bounds.html) explains the related concepts (F-bounded types, self-type, `forSome` keyword).
-- [High Wizardry in the land of Scala](https://vimeo.com/28793245) introduces the concepts of higher-kinds, typeclasses, type-level encoding and continuations.
+- [Options in Futures, how to unsuck them](https://www.youtube.com/watch?v=hGMndafDcc8): about monad transformer
 
 ## Some Resources
 
