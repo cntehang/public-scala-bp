@@ -39,8 +39,8 @@
 - [What to Leave Implicit - ScalaDay 2017](https://www.youtube.com/watch?v=Oij5V7LQJsA): the first half shows the different way and preferred way to use implicit while the second half is about new.
 - [Don't fear the Implicits: Everything you need to know about typeclasses](https://youtu.be/1e9tcymPl7w): 一个比较清晰全面的关于 Typeclasses 的介绍。
 - [Plain Functional Programming - 2017](https://www.youtube.com/watch?v=YXDm3WHZT5g): with a reference to [Strategic Scala Style: Principle of Least Power](http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html)
-- This 2019 video of [Ploymorphism in Scala](https://scaladays.org/2019/lausanne/schedule/polymorphism-in-scala) gives a clear introdution to three different polymorphism (ad hoc, parametric, inclusive) and relevant concepts such as type variances, context bound and the design patterns (interface syntax and type enrichment) of type classes.
 - The blog of [Returning the "Current" Type in Scala](https://tpolecat.github.io/2015/04/29/f-bounds.html) explains the related concepts (F-bounded types, self-type, `forSome` keyword).
+- [High Wizardry in the land of Scala](https://vimeo.com/28793245) introduces the concepts of higher-kinds, typeclasses, type-level encoding and continuations.
 
 ## Some Resources
 
