@@ -17,7 +17,7 @@
 
 ### Collectioins
 
-- [Scala Days Conferences](https://www.youtube.com/channel/UCOHg8YCiyMVRRxb3mJT_0Mg)
+- [Scala Days Conferences](https://www.youtube.com/channel/UCOHg8YCiyMVRRxb3mJT_0Mg): many scala videos from the conference.
 
 ### Specific Topics
 
@@ -80,3 +80,8 @@
 - [Hands-on Scala.js](http://www.lihaoyi.com/hands-on-scala-js/)
 - [Youtube video: Full Stack Scala with the Play Framework and Scala.js](https://youtu.be/NJVL2IsGXZ4)
 - [Play Framework with Scala.js Template](https://github.com/vmunier/play-scalajs.g8)
+
+## ZIO
+
+- [Magic Tricks with Functional Effects](https://youtu.be/xpz4rf1RS8c): a good introduction explains the concept of functional effects and serves as the mental model of ZIO, its Q&A gives weak points of ZIO. It supplements the [ZIO background document](https://zio.dev/docs/overview/overview_background).
+- [A tour of ZIO](https://youtu.be/TWdC7DhvD8M): a brief introduction of ZIO.
