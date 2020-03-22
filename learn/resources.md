@@ -85,3 +85,4 @@
 
 - [Magic Tricks with Functional Effects](https://youtu.be/xpz4rf1RS8c): a good introduction explains the concept of functional effects and serves as the mental model of ZIO, its Q&A gives weak points of ZIO. It supplements the [ZIO background document](https://zio.dev/docs/overview/overview_background).
 - [A tour of ZIO](https://youtu.be/TWdC7DhvD8M): a brief introduction of ZIO.
+- [Atomically {delete your actors}](https://youtu.be/d6WWmia0BPM) explains STM, semaphore, promise and queue.
