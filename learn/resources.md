@@ -21,6 +21,7 @@
 
 ### Specific Topics
 
+- [About Variance](https://francistoth.github.io/2020/02/12/variance.html): an intro to Variance concepts.
 - [High Wizardry in the land of Scala](https://vimeo.com/28793245) introduces the concepts of higher-kinds, typeclasses, type-level encoding 及在 Scala 里面没有多大用处的 continuations. 解释的非常清晰明了，解释了 `HList` 的实现及后面的理论基础。
 - [Polymorphism in Scala](https://youtu.be/-SA1Ui283Qc): 解释了三种多态：subtyping polymorphism (OO polymorphism), parametric polymorphism (generic type) and ad hoc polymorphism (overloading methods) 的定义和适用场景。同时介绍了 variance， type bound 和 context bound。简单明了。
 - [What to Leave Implicit - ScalaDay 2017](https://www.youtube.com/watch?v=Oij5V7LQJsA):
