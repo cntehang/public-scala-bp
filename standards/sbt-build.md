@@ -1,22 +1,26 @@
-# Build Settins
+# sbt Build
 
-制定时间： 2019 年 12 月 25 日
-目的：统一一下版本号和标准选项。
+本文包含了 sbt build 的最佳实践和标准。包括仓库，编译器开关，标准版本等。
 
-## 设置国内仓库
+## 1 设置全局仓库
 
-国内仓库可以加快下载速度。此处的设置参考了 [SBT 无痛入门指南](https://scalacn.cool/article/view?_id=10-5d7a4b3beeab565f1f3f9687)。
+使用国内仓库镜像可以加快下载速度。此处的设置参考了 [Library Dependencies](https://www.scala-sbt.org/1.x/docs/Library-Dependencies.html), [Library Management](https://www.scala-sbt.org/1.x/docs/Library-Management.html)。
 
 ### 第一步：设置全局仓库
 
-在用户的根目录下创建 `~/.sbt/repositories` 文件。内容如下：
+在用户的根目录下创建 `~/.sbt/repositories` 文件。内容如下。其中的 `huaweicloud-maven: https://repo.huaweicloud.com/repository/maven/` 是国内镜像，也可以用 `aliyun-maven: http://maven.aliyun.com/nexus/content/groups/public`。其它的内容则来自[缺省的 sbt 仓库设置](https://github.com/sbt/sbt/blob/1.3.x/launch/src/main/input_resources/sbt/sbt.boot.properties)。
 
 ```text
 [repositories]
 local
+local-preloaded-ivy: file:///${sbt.preloaded-${sbt.global.base-${user.home}/.sbt}/preloaded/}, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]
+local-preloaded: file:///${sbt.preloaded-${sbt.global.base-${user.home}/.sbt}/preloaded/}
 huaweicloud-maven: https://repo.huaweicloud.com/repository/maven/
 maven-central
-sbt-plugin-repo: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+sbt-maven-releases: https://repo.scala-sbt.org/scalasbt/maven-releases/, bootOnly
+sbt-maven-snapshots: https://repo.scala-sbt.org/scalasbt/maven-snapshots/, bootOnly
+typesafe-ivy-releases: https://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext], bootOnly
+sbt-ivy-snapshots: https://repo.scala-sbt.org/scalasbt/ivy-snapshots/, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext], bootOnly
 ```
 
 ### 第二步：设置所有项目都使用上面的全局仓库配置，忽略自身仓库配置
@@ -27,15 +31,21 @@ sbt-plugin-repo: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases, [organ
 方法二：设置环境变量。 `export SBT_OPTS="-Dsbt.override.build.repos=true"`
 方法三：`sbt` 命令参数。 `sbt -Dsbt.override.build.repos=true`
 
-正常情况下，`repositories` 文件应该在 `~/.sbt` 目录，如果放到别处，则应该在 `sbt-1.3.x/conf/sbtopts` 文件或 `sbt` 命令行给出路径。格式为 `-Dsbt.repository.config=<path-to-your-repo-file>`。
-
 ### 第三步：确认使用全局仓库
 
 创建一个 Scala 项目，运行 `sbt` 后在提示符下输入命令：`show overrideBuildResolvers` 应该看到结果为 `true`。
 
 查看搜索的仓库配置，输入命令：`show fullResolvers`，确认配置的全局仓库。
 
-编译项目 `compile` 然后确认下载的仓库资源。 在 Mac `~/Library/Caches/Coursier/v1/https` 目录下应该可以看到 `repo.huaweicloud.com` 目录和下载的资源。Window 缓存路径是 `%LOCALAPPDATA%\Coursier\Cache\v1/https`。
+编译项目 `compile` 然后确认下载的仓库资源。在 Mac `~/Library/Caches/Coursier/v1/https` 目录下应该可以看到 `repo.huaweicloud.com` 目录和下载的资源。
+
+### 第四步：注意事项
+
+正常情况下，`repositories` 文件应该在 `~/.sbt` 目录，如果放到别处，则应该在 `sbt-1.3.x/conf/sbtopts` 文件或 `sbt` 命令行给出路径。格式为 `-Dsbt.repository.config=<path-to-your-repo-file>`。
+
+由于设置了 `sbt.override.build.repos=true`, 具体项目的 `resovlers` 或 `externalResolvers` 会不起作用了。新的仓库应该配置在 `~/.sbt/repositories`。
+
+不在仓库的依赖可以直接给出具体的 `jar` 路径。比如：`libraryDependencies += "slinky" % "slinky" % "2.1" from "https://slinky2.googlecode.com/svn/artifacts/2.1/slinky.jar"`。
 
 ## `project/build.properties`
 
@@ -43,13 +53,15 @@ sbt-plugin-repo: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases, [organ
 sbt.version=1.3.8
 ```
 
-## `build.sbt`
+## 2 `build.sbt`
 
-### 基本配置
+### 2.1 基本配置
 
 ```scala
-
-scalaVersion := "2.13.1"
+// ThisBuild means "entire build", its setting applies to all projects.
+ThisBuild / organization := "com.example"
+ThisBuild / scalaVersion := "2.13.1"
+ThisBuild / version      := "0.1.0-SNAPSHOT"
 
 // copied from https://nathankleyn.com/2019/05/13/recommended-scalac-flags-for-2-13/
 scalacOptions ++= Seq(
@@ -95,7 +107,7 @@ scalacOptions ++= Seq(
 )
 ```
 
-### Akka 依赖
+### 2.2 Akka 依赖
 
 ```scala
 libraryDependencies ++= {
