@@ -1,6 +1,6 @@
-# 建议使用的软件和版本
+# Scala 技术栈：建议使用的软件和版本
 
-更新时间 2020-08-07
+更新时间 2020-06-12.
 
 后端技术栈选取原则有二个：
 
@@ -56,8 +56,6 @@ Haoyi 的[介绍视频](https://youtu.be/j6uThGxx-18)。
 
 我们在此之上集成了 ZIO 做应用基本的异步并发处理。 REST API 可以尝试其生态库的其它库 -- 待定。
 
-客户端 HTML 生成则采用 [Scalatags](https://www.lihaoyi.com/scalatags/)。原生的 Scala 代码生成 HTML 非常方便、高效而且灵活。
-
 ## 8 测试
 
 待定。
@@ -66,6 +64,10 @@ Haoyi 的[介绍视频](https://youtu.be/j6uThGxx-18)。
 
 - JSON 序列化：先尝试 [uPickle](https://www.lihaoyi.com/upickle/)。如果不能满足需求可以尝试 [circe](https://circe.github.io/circe/)。
 - 配置管理： 用 [PureConfgu](https://pureconfig.github.io/)。
+- 前端工具：用于服务端渲染 (Server-side rendering SSR) 全栈开发，
+  - HTML 生成：客户端 HTML 生成则采用 [Scalatags](https://www.lihaoyi.com/scalatags/)。原生的 Scala 代码生成 HTML 非常方便、高效而且灵活。
+  - CSS：[bootstrap](https://getbootstrap.com/) 4.5 or later。
+  - Javascript Lib: [jQuery](https://jquery.com/) 3.5 or later。
 
 ## 10 不建议采用
 
