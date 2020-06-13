@@ -81,10 +81,10 @@ Trace 给出详细的程序运行状态。Trace 可以用在循环的内部或�
 
 Java/Scala 日志采用 sl4j + logback 记录日志。
 
-- 日志格式：`%date [%thread] [%X{TraceId}] %-5level %logger{80}.%M - %msg%n`
+- 日志格式：`%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n`
 - 日志记录的地点：生产系统输出到 Console 或日志平台。本地开发/测试则可以记录到本地文件。
 - 记录颗粒度：不同类型日志，记录到不同文件，每日分割，最后日志由日志分析平台收集。
-- 日志记录级别：线上只开通 info 级别，测试环境可以开通其他级别，后期开启动态调级的设置。
+- 日志记录级别：线上只开通 info 级别，线上应该可以开启动态调级的设置。测试环境可以开通其他级别。
 - 分布式日志跟踪：每个请求进入系统时，都会在其处理线程中添加一个线程本地变量`TraceId`，记录日志时，自动采用本变量，如果需要创建线程做一些异步操作，或者需要调用其他服务，都请将 traceId 带上。
 
 ### 5.2 日志写法
@@ -121,21 +121,6 @@ Debug 级别的日志在跨进程函数出入口进行记录时应成对出现�
 - 跨进程服务的 API 需要有 Debug 级别日志成对记录请求参数和返回结果，这样也提供了相应时间记录。
 
 - 日志语句中不要调用耗时的方法（在关闭日志以后，日志对性能的影响应该可以忽略不记）
-
-```java
-// 关闭日志以后以会有函数调用 toJson 或 toString，会对性能造成影响，避免使用；
-logger.debug("Enter. request:{}", JsonUtils.toJson(params));
-logger.debug("Enter. request:{}", params);
-
-// 建议的方法
-if (logger.isDebugEnabled()) {
-    "Enter. request:{}", JsonUtils.toJson(params));
-}
-// 如果用 toString，则建议
-if (logger.isDebugEnabled()) {
-    "Enter. request:{}", params);
-}
-```
 
 ## 6 例外
 
