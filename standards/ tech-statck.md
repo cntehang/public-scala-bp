@@ -15,6 +15,8 @@
 
 另外就是需要了解 `case class` 的概念，在 Scala 编程里用途广泛。 [Type class from the ground up 的 Youtub 视频](https://youtu.be/3BM4IEziqIM) 给出了非常好的介绍，建议一定看懂理解。
 
+[Functional Programming with Effects](https://youtu.be/30q6BkBv5MY) 介绍了函数式编程的一些概念。
+
 ## 2 IDE
 
 The latest VS Code and [Metals](https://scalameta.org/metals/docs/editors/vscode.html)。基本成熟，尤其方便多语言全栈编程。
