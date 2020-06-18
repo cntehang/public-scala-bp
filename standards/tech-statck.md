@@ -9,7 +9,7 @@
 
 ## 1 开发语言与运行环境
 
-[Scala 2.13 or later](https://www.Scala-lang.org/download/)。 运行环境为 JDK 11 or later.
+[Scala 2.13 or later](https://www.Scala-lang.org/download/)。 运行环境为 JDK 11 or later. 基本的 Scala 学习可以读免费的 [Essential Scala](https://underscore.io/books/essential-scala/)。Udemy 的二门课 [Scala & Functional Programming for Beginners | Rock the JVM](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/) 和 [Advanced Scala and Functional Programming | Rock the JVM](https://www.udemy.com/course/advanced-scala/) 也非常不错。我们团队有购买。
 
 学习 Scala 需要掌握一些基本的 FP 编程概念， [Functional Programming, Simplified](https://alvinalexander.com/scala/functional-programming-simplified-book/) 是很好的介绍。
 
@@ -31,34 +31,31 @@ The latest VS Code and [Metals](https://scalameta.org/metals/docs/editors/vscode
 
 Haoyi 的[介绍视频](https://youtu.be/j6uThGxx-18)。
 
-## 4 FP Lib
+## 4 Logging
 
-采用 [ZIO](https://zio.dev/)。利用文档了解其基本功能后，需要了解模块化依赖（DI）工具 [`ZLayer`](https://zio.dev/docs/howto/howto_use_layers)。
+简单的报表项目建议采用[scala-logging](https://github.com/lightbend/scala-logging)。
 
-学习资源有：
+复杂的实时系统可以考虑采用基于 Slf4j 和 Logback 的 [BlindSight](https://tersesystems.github.io/blindsight/)。
 
-- [A Tour of ZIO](https://youtu.be/TWdC7DhvD8M)
-- [Getting sstarted with ZIO](https://youtu.be/6A1SA5Be9qw)
-
-## 5 Logging
-
-采用基于 Slf4j 和 Logback 的 [BlindSight](https://tersesystems.github.io/blindsight/)， 并在其上开发相应的 ZIO logging API。不要使用 ZIO 自己的 logging 库，完全是一场灾难。
-
-## 6 数据库访问
+## 5 数据库访问
 
 [quill](https://getquill.io/) 用于生成 SQL， 比 Slick 设计要好，更新也快。[官方文档](https://getquill.io/) 是最好的学习资源。
 
 [Dualistic Quotations in Quill](https://youtu.be/sqyAa4W7GDo) 视频介绍了其实现机理和一些功能。
 
-## 7 Web Server
+## 6 Web Server
 
 使用异步 Java 库（不用其 Scala API， 更新不及时而且有些累赘） [Vert.X Core](https://vertx.io/docs/vertx-core/java/) 和 [Vert.x Web](https://vertx.io/docs/vertx-web/java/)。最好的学习资料就是其官网文档，比较清晰。
 
-我们在此之上集成了 ZIO 做应用基本的异步并发处理。 REST API 可以尝试其生态库的其它库 -- 待定。
+REST API 可以尝试其生态库的其它库 -- 待定。
 
-## 8 测试
+## 7 测试
 
-待定。
+试用 [Scalatest](https://www.scalatest.org/)
+
+## 8 依赖注入
+
+建议采用用 [MacWire](https://github.com/softwaremill/macwire)。
 
 ## 9 其它工具
 
@@ -72,7 +69,7 @@ Haoyi 的[介绍视频](https://youtu.be/j6uThGxx-18)。
 ## 10 不建议采用
 
 - Akka 技术栈包括：Akka Actor， Akka HTTP, Play, Lagom。过于复杂难用。
-- Cats / Scalaz： 这二大类生态太多高级概念，而且缺乏代码规范。
 - Scalajs： 配置和类型转换太累。
 - sttp：作为 Http clien 类型比较复杂。
 - cask web framework: 虽然比 Play 好，但是不成熟而且功能有限。
+- FP Lib: 由于概念跨度比较大，类型过于复杂，不建议大规模使用。比较流行的 FP 库包括 [Cats](https://typelevel.org/cats/) 和 [ZIO](https://zio.dev/)。 Scala FP 库的问题在于缺乏标准、过于复杂、学习和使用难度比较大。ZIO 相对简单但是很不成熟。

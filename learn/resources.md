@@ -1,5 +1,11 @@
 # Scala Resources
 
+## 比较好的学习资料 FP 学习资料
+
+- [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala): 俗称红宝书，里面的习题非常有帮助。有中文版。
+- [Scala with Cats Book](https://underscore.io/books/scala-with-cats/)：免费电子书。
+- [herding cats](http://eed3si9n.com/herding-cats/): 撸猫网上教程。
+
 ## Resoruce List
 
 [scalais.cool](http://www.scalais.cool/) 给出了一些基本的 Scala 资源。
