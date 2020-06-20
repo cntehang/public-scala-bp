@@ -7,6 +7,8 @@
 - 第一是尽量靠近 Scala 语言本身（第一性原则），外加最简单的 FP 概念。避免引入复杂的抽象而美丽的概念如 Monad, Higher Kinded Type，Transformer 等等。
 - 第二是新的东西需要自己完全可以掌控（团队具备源代码级的理解和修改能力）。
 
+考虑到 Scala 函数式编程的复杂性和成熟度，近期不建议大规模采用 FP 编程范式。后端编程用 Scala 作为一个更好的 Java 使用，同时采用使用一些简单、成熟度高的 Scala 库。因为采用的 Java/Scala 库没有太多 FP 范式，下面的选型任何一个有经验的 Java 程序员大概一个月之内就可以达到 Java 的效率或更高。
+
 ## 1 开发语言与运行环境
 
 [Scala 2.13 or later](https://www.Scala-lang.org/download/)。 运行环境为 JDK 11 or later. 基本的 Scala 学习可以读免费的 [Essential Scala](https://underscore.io/books/essential-scala/)。Udemy 的二门课 [Scala & Functional Programming for Beginners | Rock the JVM](https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/) 和 [Advanced Scala and Functional Programming | Rock the JVM](https://www.udemy.com/course/advanced-scala/) 也非常不错。我们团队有购买。
@@ -47,7 +49,7 @@ Haoyi 的[介绍视频](https://youtu.be/j6uThGxx-18)。
 
 使用异步 Java 库（不用其 Scala API， 更新不及时而且有些累赘） [Vert.X Core](https://vertx.io/docs/vertx-core/java/) 和 [Vert.x Web](https://vertx.io/docs/vertx-web/java/)。最好的学习资料就是其官网文档，比较清晰。
 
-REST API 可以尝试其生态库的其它库 -- 待定。
+REST API 可以尝试其 4.0 的 OPEN API lib。
 
 ## 7 测试
 
@@ -55,7 +57,7 @@ REST API 可以尝试其生态库的其它库 -- 待定。
 
 ## 8 依赖注入
 
-建议采用用 [MacWire](https://github.com/softwaremill/macwire)。
+建议采用用 [MacWire](https://github.com/softwaremill/macwire) 做简单的 Constructor DI（构造注入）。
 
 ## 9 其它工具
 
